@@ -1,5 +1,5 @@
 # 简述
-改项目集成了CAS Server CAS Client 以及客户端采用Pac4j的方式来认证
+该项目集成了CAS Server CAS Client 以及客户端采用Pac4j的方式来认证
 # 什么是单点登录
 单点登录（Single Sign On），简称 SSO，常用于多个系统中，用户只需登录一次，就可以访问其他信任的系统。比如，员工登录过OA系统后，可以直接访问邮件系统，而不再需要登录邮件系统。这里的OA系统和邮件系统，可以认为是相互信任的子系统，他们共用一套用户数据，这套用户数据的权限认证由统一的认证服务器来认证。
 
@@ -8,7 +8,7 @@
 >Enterprise Single Sign-On - CAS provides a friendly open source community that actively supports and contributes to the project. While the project is rooted in higher-ed open source, it has grown to an international audience spanning Fortune 500 companies and small special-purpose installations.
 
 `CAS`提供了[CAS协议](https://apereo.github.io/cas/5.3.x/protocol/CAS-Protocol.html) 来完成单点登录，主要流程如下
-1. 用户第一次向浏览器访问应用1(https://app.example.com)，应用1判断用户没有登录，重定向到CAS server(https://cas.example.com/cas/login?service=https://app.example.com)
+1. 用户第一次向浏览器访问应用1(https://app.example.com) ，应用1判断用户没有登录，重定向到CAS server(https://cas.example.com/cas/login?service=https://app.example.com)
 
 2. CAS server中判断当前用户的sso的session不存在，展示用户名密码输入框
 
@@ -57,7 +57,7 @@
             <version>${cas.version}</version>
         </dependency>
 ```
-命令行运行`mvn clean package & java -jar target/cas.war` 等待服务启动后，访问http://locahost:8443/cas，会跳转登录，输入u/p登录成功。到此，cas服务端算是ok了。
+命令行运行`mvn clean package & java -jar target/cas.war` 等待服务启动后，访问http://locahost:8443/cas ， 会跳转登录，输入u/p登录成功。到此，cas服务端算是ok了。
 
 # CAS客户端
 新建spring boot项目`cas-client2`和`cas-client3`，其中cas-client2的端口为8082，cas-client3的端口为8083，pom中添加如下依赖
